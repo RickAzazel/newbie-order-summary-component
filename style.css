@@ -1,0 +1,183 @@
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+	font-size: 1.8rem;
+	color: rgb(31, 47, 86);
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: rgb(224, 232, 255);
+	padding: 30px 20px;
+}
+
+.card-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 450px;
+	height: 700px;
+	border-radius: 15px;
+	background: white;
+}
+
+.card-img {
+	width: 100%;
+	height: 220px;
+	border-radius: 15px 15px 0 0;
+	background: url('images/illustration-hero.svg') no-repeat;
+	background-size: 100% 100%;
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 70%;
+	padding: 50px 40px;
+}
+
+.card-title {
+	font-size: 2.8rem;
+	font-weight: 900;
+}
+
+.card-text {
+	text-align: center;
+	color: rgb(114, 128, 167);
+}
+
+.card-order {
+	display: flex;
+	width: 100%;
+}
+
+.order-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+	background: rgb(245, 247, 255);
+	border-radius: 10px;
+}
+
+.order-col.music-icon {
+	position: relative;
+	padding-left: 70px;
+}
+
+.order-col.music-icon::before {
+	content: '';
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url('images/icon-music.svg') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.order-name {
+	font-weight: 700;
+}
+
+.order-price {
+	color: rgb(114, 128, 167);
+}
+
+.order-change:hover {
+	text-decoration: none;
+	color: rgb(118, 108, 241);
+}
+
+.card-proceed-btn {
+	width: 100%;
+	padding: 15px 0;
+	border-radius: 10px;
+	font-weight: 700;
+	color: white;
+	border: none;
+	background: rgb(56, 41, 224);
+	box-shadow: 0px 10px 30px 2px rgba(56, 41, 224, 0.356);
+	transition: background .5s ease;
+}
+
+.card-proceed-btn:hover {
+	cursor: pointer;
+	background: rgb(118, 108, 241);
+}
+
+.card-cancel-btn {
+	font-weight: 700;
+	padding: 15px 0;
+	border: none;
+	color: rgb(114, 128, 167);
+	background: none;
+}
+
+.card-cancel-btn:hover {
+	cursor: pointer;
+	color: rgb(118, 108, 241);
+}
+
+@media (max-width: 480px) {
+	body {
+		font-size: 1.6rem;
+	}
+
+	.card-container {
+		max-height: 550px;
+	}
+
+	.card-img {
+		height: 25%;
+	}
+
+	.card-body {
+		height: 75%;
+		padding: 30px 20px 20px 20px;
+	}
+}
+
+@media (max-width: 350px) {
+.card-container {
+	max-height: 480px;
+}
+
+	.card-body {
+		padding: 15px 10px;
+	}
+
+	.card-title {
+		font-size: 2.3rem;
+	}
+
+	.order-row {
+		font-size: 1.2rem;
+		padding: 15px;
+	}
+
+	.order-col.music-icon {
+		padding-left: 55px;
+	}
+
+	.order-col.music-icon::before {
+		top: -6px;
+		left: -5px;
+	}
+}
