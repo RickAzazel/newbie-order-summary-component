@@ -25,7 +25,7 @@ body {
 	padding: 30px 20px;
 }
 
-.card-container {
+.card {
 	display: flex;
 	flex-direction: column;
 	max-width: 450px;
@@ -34,15 +34,15 @@ body {
 	background: white;
 }
 
-.card-img {
+.image {
 	width: 100%;
 	height: 220px;
 	border-radius: 15px 15px 0 0;
-	background: url('images/illustration-hero.svg') no-repeat;
+	background: url('./images/illustration-hero.svg') no-repeat;
 	background-size: 100% 100%;
 }
 
-.card-body {
+.content {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -51,22 +51,22 @@ body {
 	padding: 50px 40px;
 }
 
-.card-title {
+.title {
 	font-size: 2.8rem;
 	font-weight: 900;
 }
 
-.card-text {
+.text {
 	text-align: center;
 	color: rgb(114, 128, 167);
 }
 
-.card-order {
+.order {
 	display: flex;
 	width: 100%;
 }
 
-.order-row {
+.order__row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -76,107 +76,112 @@ body {
 	border-radius: 10px;
 }
 
-.order-col.music-icon {
+.icon-music {
 	position: relative;
 	padding-left: 70px;
 }
 
-.order-col.music-icon::before {
+.icon-music::before {
 	content: '';
 	display: block;
 	width: 50px;
 	height: 50px;
-	background: url('images/icon-music.svg') no-repeat;
+	background: url('./images/icon-music.svg') no-repeat;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
-.order-name {
+.order__name {
 	font-weight: 700;
 }
 
-.order-price {
+.order__price {
 	color: rgb(114, 128, 167);
 }
 
-.order-change:hover {
+.link:hover {
 	text-decoration: none;
 	color: rgb(118, 108, 241);
 }
 
-.card-proceed-btn {
-	width: 100%;
-	padding: 15px 0;
-	border-radius: 10px;
+.button {
 	font-weight: 700;
+	padding: 15px 0;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button__proceed {
+	width: 100%;
+	border-radius: 10px;
 	color: white;
 	border: none;
 	background: rgb(56, 41, 224);
 	box-shadow: 0px 10px 30px 2px rgba(56, 41, 224, 0.356);
-	transition: background .5s ease;
+	transition: all .5s ease;
 }
 
-.card-proceed-btn:hover {
-	cursor: pointer;
+.button__proceed:hover {
 	background: rgb(118, 108, 241);
 }
 
-.card-cancel-btn {
-	font-weight: 700;
-	padding: 15px 0;
+.button__cancel {
 	border: none;
 	color: rgb(114, 128, 167);
 	background: none;
 }
 
-.card-cancel-btn:hover {
-	cursor: pointer;
-	color: rgb(118, 108, 241);
+.button__cancel:hover {
+	color: rgb(31, 47, 86);
 }
 
+
+/* mobile */
 @media (max-width: 480px) {
 	body {
 		font-size: 1.6rem;
 	}
 
-	.card-container {
+	.card {
 		max-height: 550px;
 	}
 
-	.card-img {
+	.image {
 		height: 25%;
 	}
 
-	.card-body {
+	.content {
 		height: 75%;
 		padding: 30px 20px 20px 20px;
 	}
 }
 
 @media (max-width: 350px) {
-.card-container {
+.card {
 	max-height: 480px;
 }
 
-	.card-body {
+	.content {
 		padding: 15px 10px;
 	}
 
-	.card-title {
+	.title {
 		font-size: 2.3rem;
 	}
 
-	.order-row {
+	.order__row {
 		font-size: 1.2rem;
 		padding: 15px;
 	}
 
-	.order-col.music-icon {
+	.icon-music {
 		padding-left: 55px;
 	}
 
-	.order-col.music-icon::before {
+	.icon-music::before {
 		top: -6px;
 		left: -5px;
 	}
