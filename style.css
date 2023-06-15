@@ -1,19 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
 *,
 ::after,
 ::before {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	font-family: 'Red Hat Display', sans-serif;
+}
+
+:root {
+	/** ============== Colors ============== */
+	/* Background */
+	--wrapper-bg-color: rgb(224, 232, 255);
+	--card-bg-color: white;
+	--order-row-bg-color: rgb(245, 247, 255);
+	--button-proceed-bg-color: rgb(56, 41, 224);
+	--button-proceed-bg-color--hover: rgb(118, 108, 241);
+
+	/* Font */
+	--body-font-color: rgb(31, 47, 86);
+	--text-font-color: rgb(114, 128, 167);
+	--order-price-font-color: rgb(114, 128, 167);
+	--link-font-color--hover: rgb(118, 108, 241);
+	--button-proceed-font-color: white;
+	--button-cancel-font-color: rgb(114, 128, 167);
+	--button-cancel-font-color--hover: rgb(31, 47, 86);
+
+	/* Shadow */
+	--button-proceed-shadow-color: rgba(56, 41, 224, 0.356);
 }
 
 html {
 	font-size: 62.5%;
-	font-family: 'Red Hat Display', sans-serif;
 }
 
 body {
 	font-size: 1.8rem;
-	color: rgb(31, 47, 86);
+	color: var(--body-font-color);
 }
 
 .wrapper {
@@ -21,7 +45,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background: rgb(224, 232, 255);
+	min-height: 750px;
+	background: var(--wrapper-bg-color);
 	padding: 30px 20px;
 }
 
@@ -31,7 +56,7 @@ body {
 	max-width: 450px;
 	height: 700px;
 	border-radius: 15px;
-	background: white;
+	background: var(--card-bg-color);
 }
 
 .image {
@@ -58,7 +83,7 @@ body {
 
 .text {
 	text-align: center;
-	color: rgb(114, 128, 167);
+	color: var(--text-font-color);
 }
 
 .order {
@@ -72,7 +97,7 @@ body {
 	align-items: center;
 	width: 100%;
 	padding: 20px;
-	background: rgb(245, 247, 255);
+	background: var(--order-row-bg-color);
 	border-radius: 10px;
 }
 
@@ -97,12 +122,12 @@ body {
 }
 
 .order__price {
-	color: rgb(114, 128, 167);
+	color: var(--order-price-font-color);
 }
 
 .link:hover {
 	text-decoration: none;
-	color: rgb(118, 108, 241);
+	color: var(--link-font-color--hover);
 }
 
 .button {
@@ -117,32 +142,36 @@ body {
 .button__proceed {
 	width: 100%;
 	border-radius: 10px;
-	color: white;
 	border: none;
-	background: rgb(56, 41, 224);
-	box-shadow: 0px 10px 30px 2px rgba(56, 41, 224, 0.356);
+	background: var(--button-proceed-bg-color);
+	color: var(--button-proceed-font-color);
+	box-shadow: 0px 10px 30px 2px var(--button-proceed-shadow-color);
 	transition: all .5s ease;
 }
 
 .button__proceed:hover {
-	background: rgb(118, 108, 241);
+	background: var(--button-proceed-bg-color--hover);
 }
 
 .button__cancel {
 	border: none;
-	color: rgb(114, 128, 167);
+	color: var(--button-cancel-font-color);
 	background: none;
 }
 
 .button__cancel:hover {
-	color: rgb(31, 47, 86);
+	color: var(--button-cancel-font-color--hover);
 }
 
-
+/** ============== Media ============== */
 /* mobile */
 @media (max-width: 480px) {
 	body {
 		font-size: 1.6rem;
+	}
+
+	.wrapper {
+		min-height: 600px;
 	}
 
 	.card {
@@ -160,9 +189,9 @@ body {
 }
 
 @media (max-width: 350px) {
-.card {
-	max-height: 480px;
-}
+	.card {
+		max-height: 480px;
+	}
 
 	.content {
 		padding: 15px 10px;
